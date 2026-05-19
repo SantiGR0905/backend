@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
 const { authenticateToken, authorizeRoles } = require('../middleware/auth');
+const upload = require('../middleware/upload');
 
 // Listar productos (público)
 router.get('/', async (req, res) => {
@@ -43,6 +44,15 @@ router.get('/:id', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+// Subir imagen de producto (solo admin)
+router.post('/upload-image', authenticateToken, authorizeRoles('admin'), upload.single('image'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No se recibió ninguna imagen' });
+  }
+  const imageUrl = `http://localhost:3000/uploads/products/${req.file.filename}`;
+  res.json({ url: imageUrl });
 });
 
 // Crear producto (solo admin)
