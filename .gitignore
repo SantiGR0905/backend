@@ -9,9 +9,9 @@ yarn.lock
 # Bases de datos SQLite (excepto material.db)
 *.db
 !material.db
+!material.db-journal
 data/*.db
 !data/material.db
-*.db-journal
 *.sqlite
 *.sqlite3
 data/*.sqlite
