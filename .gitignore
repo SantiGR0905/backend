@@ -6,13 +6,14 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
-# Bases de datos SQLite
+# Bases de datos SQLite (excepto material.db)
 *.db
 !material.db
+data/*.db
+!data/material.db
 *.db-journal
 *.sqlite
 *.sqlite3
-data/*.db
 data/*.sqlite
 data/*.sqlite3
 
