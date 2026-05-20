@@ -15,7 +15,7 @@ const sampleProducts = [
     price: 12500,
     category: "Cemento, cal y yeso",
     subcategory: "Cemento",
-    image: "https://example.com/cemento.jpg",
+    image: "/uploads/products/cementoGris.png",
     description: "Ideal para hormigón armado. Resistencia óptima para construcciones estructurales.",
     stock: 100
   },
@@ -24,7 +24,7 @@ const sampleProducts = [
     price: 850,
     category: "Bloques y ladrillos",
     subcategory: "Ladrillos",
-    image: "https://example.com/ladrillo.jpg",
+    image: "/uploads/products/ladrilloHueco.jpg",
     description: "Ladrillo cerámico hueco para paredes interiores y exteriores.",
     stock: 5000
   },
@@ -33,7 +33,7 @@ const sampleProducts = [
     price: 4500,
     category: "Hierro y acero",
     subcategory: "Barras",
-    image: "https://example.com/hierro.jpg",
+    image: "/uploads/products/hierro.jpeg",
     description: "Barra de acero corrugado para estructuras de hormigón.",
     stock: 200
   },
@@ -42,7 +42,7 @@ const sampleProducts = [
     price: 18000,
     category: "Áridos",
     subcategory: "Arenas",
-    image: "https://example.com/arena.jpg",
+    image: "/uploads/products/arenaFina.png",
     description: "Arena fina lavada para morteros y hormigón.",
     stock: 50
   },
@@ -51,7 +51,7 @@ const sampleProducts = [
     price: 3200,
     category: "Maderas",
     subcategory: "Maderas",
-    image: "https://example.com/madera.jpg",
+    image: "/uploads/products/maderaPino.png",
     description: "Madera de pino tratada para estructuras.",
     stock: 300
   },
@@ -60,7 +60,7 @@ const sampleProducts = [
     price: 850,
     category: "Tejas",
     subcategory: "Tejas cerámicas",
-    image: "https://example.com/teja.jpg",
+    image: "/uploads/products/tejaEspañola.png",
     description: "Teja cerámica tradicional color terracota.",
     stock: 1000
   },
@@ -69,7 +69,7 @@ const sampleProducts = [
     price: 35000,
     category: "Pinturas",
     subcategory: "Látex",
-    image: "https://example.com/pintura.jpg",
+    image: "/uploads/products/pinturaBlanca.png",
     description: "Pintura látex para interiores y exteriores. Excelente cobertura.",
     stock: 50
   },
@@ -78,7 +78,7 @@ const sampleProducts = [
     price: 12000,
     category: "Electricidad",
     subcategory: "Cables",
-    image: "https://example.com/cable.jpg",
+    image: "/uploads/products/cableElectrico.png",
     description: "Cable unipolar para instalaciones eléctricas domiciliarias.",
     stock: 150
   },
@@ -87,7 +87,7 @@ const sampleProducts = [
     price: 45000,
     category: "Herramientas manuales",
     subcategory: "Herramientas eléctricas",
-    image: "https://example.com/taladro.jpg",
+    image: "/uploads/products/taladroPercutor.png",
     description: "Taladro percutor profesional con maletín.",
     stock: 25
   },
@@ -96,7 +96,7 @@ const sampleProducts = [
     price: 8500,
     category: "Adhesivos",
     subcategory: "Adhesivos cerámicos",
-    image: "https://example.com/adhesivo.jpg",
+    image: "/uploads/products/adhesivoCeramico.png",
     description: "Adhesivo para cerámicos y porcelanatos.",
     stock: 200
   }

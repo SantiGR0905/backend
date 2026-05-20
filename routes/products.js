@@ -51,7 +51,7 @@ router.post('/upload-image', authenticateToken, authorizeRoles('admin'), upload.
   if (!req.file) {
     return res.status(400).json({ error: 'No se recibió ninguna imagen' });
   }
-  const imageUrl = `http://localhost:3000/uploads/products/${req.file.filename}`;
+  const imageUrl = `/uploads/products/${req.file.filename}`;
   res.json({ url: imageUrl });
 });
 
