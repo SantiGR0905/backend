@@ -8,9 +8,11 @@ yarn.lock
 
 # Bases de datos SQLite
 *.db
+!material.db
 *.db-journal
 *.sqlite
 *.sqlite3
+data/*.db
 data/*.sqlite
 data/*.sqlite3
 
