@@ -109,7 +109,7 @@ const initialUsers = [
   {
     name: "Admin",
     email: "admin@elcimiento.com",
-    password: "Admin$2025!Seguro",
+    password: "solomillos",
     role: "admin",
     avatar: "👷",
     description: "Administrador del sistema"
