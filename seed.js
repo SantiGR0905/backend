@@ -44,7 +44,7 @@ const sampleProducts = [
     price: 18000,
     category: "Áridos",
     subcategory: "Arenas",
-    image: "/uploads/products/ArenaFina.png",
+    image: "/uploads/products/arenaFina.png",
     description: "Arena fina lavada para morteros y hormigón.",
     stock: 50
   },
