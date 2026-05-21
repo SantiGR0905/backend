@@ -14,13 +14,13 @@
     },
     {
       "id": 2,
-      "nombre": "FLAG{3xtr4c10n_d3_inf0rm4c10n_s3ns1bl3}",
-      "password": "0c60d47dde8a2565c6185f85b0196ddc",
+      "nombre": "Diego Alexander Pinzon Camargo",
+      "password": "3e116e7b3265fb97733b59ace24aeea1",
       "rol": "system"
     },
     {
       "id": 3,
-      "nombre": "juan.perez",
+      "nombre": "Julian Santaigo Gutierrez Rodriguez",
       "password": "297a565ff9320c1e5b0d5679e76c97e1",
       "rol": "usuario"
     },
@@ -36,5 +36,5 @@
     "db_name": "materiales_db",
     "version": "1.0"
   },
-  "flag": "FLAG{xtr4c10n_d3_inf0rm4c10n_s3ns1bl3}"
+  "flag": "🚩🔍 Bandera de Extracción de Información 🔍🚩"
 }
