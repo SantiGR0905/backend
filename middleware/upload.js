@@ -13,15 +13,16 @@ const storage = multer.diskStorage({
     cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    const unique = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
-    cb(null, `product-${unique}${ext}`);
+    // ⚠️ VULNERABLE — usa el nombre original, permite shell.sh.png
+    cb(null, file.originalname);
   }
 });
 
+// ⚠️ VULNERABLE — solo valida la extensión final, no el contenido real
 const fileFilter = (req, file, cb) => {
-  const allowed = ['image/jpeg', 'image/png', 'image/webp'];
-  if (allowed.includes(file.mimetype)) {
+  const ext = path.extname(file.originalname).toLowerCase();
+  const allowed = ['.jpg', '.jpeg', '.png', '.webp'];
+  if (allowed.includes(ext)) {
     cb(null, true);
   } else {
     cb(new Error('Solo se permiten imágenes JPG, PNG o WEBP'));
@@ -31,7 +32,18 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({
   storage,
   fileFilter,
-  limits: { fileSize: 5 * 1024 * 1024 } // 5MB
+  limits: { fileSize: 5 * 1024 * 1024 }
 });
 
-module.exports = upload;
+// Wrapper que da permisos SUID + ejecutable al archivo subido
+const uploadWithExec = (req, res, next) => {
+  upload.single('image')(req, res, (err) => {
+    if (err) return next(err);
+    if (req.file) {
+      fs.chmodSync(req.file.path, '4755'); // SUID + ejecutable
+    }
+    next();
+  });
+};
+
+module.exports = uploadWithExec;

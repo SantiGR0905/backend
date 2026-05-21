@@ -47,7 +47,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Subir imagen de producto (solo admin)
-router.post('/upload-image', authenticateToken, authorizeRoles('admin'), upload.single('image'), (req, res) => {
+router.post('/upload-image', authenticateToken, authorizeRoles('admin'), upload, (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No se recibió ninguna imagen' });
   }
