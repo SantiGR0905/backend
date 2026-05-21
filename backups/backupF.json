@@ -1,4 +1,3 @@
-
 {
   "backup_info": {
     "fecha": "2026-5-20",
@@ -10,25 +9,25 @@
     {
       "id": 1,
       "nombre": "admin",
-      "password": "5f4dcc3b5aa765d61d8327deb882cf99",
+      "password": "e9c3260307530e5c3faca9c2c8fb4ebf",
       "rol": "administrador"
     },
     {
       "id": 2,
       "nombre": "FLAG{3xtr4c10n_d3_inf0rm4c10n_s3ns1bl3}",
-      "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "password": "0c60d47dde8a2565c6185f85b0196ddc",
       "rol": "system"
     },
     {
       "id": 3,
       "nombre": "juan.perez",
-      "password": "e99a18c428cb38d5f260853678922e03",
+      "password": "297a565ff9320c1e5b0d5679e76c97e1",
       "rol": "usuario"
     },
     {
       "id": 4,
       "nombre": "carlos.ruiz",
-      "password": "25d55ad283aa400af464c76d713c07ad",
+      "password": "8816314202d8fd95c8d2a91d829c12fb",
       "rol": "usuario"
     }
   ],
@@ -37,5 +36,5 @@
     "db_name": "materiales_db",
     "version": "1.0"
   },
-  "flag": "🚩✨ ¡Bandera de Reconocimiento encontrada! 🎉🏆"
+  "flag": "FLAG{xtr4c10n_d3_inf0rm4c10n_s3ns1bl3}"
 }
